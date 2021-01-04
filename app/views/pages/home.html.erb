@@ -1,1 +1,14 @@
-<h1>Time to chistole</h1>
+<div class="content">
+  <h1>Est ce que c'est l'heure de la chistole ?</h1>
+
+  <h2>Il est <%= Time.now.strftime("%H:%M") %></h2>
+
+
+  <% if Time.now.strftime("%H").to_i >= 18 %>
+    <h3><%= "C'est l'heure de la Chistole !" %></h3>
+    <img src="https://media.giphy.com/media/o6xoGwmBIb32M/giphy.gif" alt="it's Time">
+  <% else %>
+    <h3><%= "Plus que #{18 - Time.now.strftime("%H").to_i}H avant la chistole !" %></h3>
+    <img src="https://media.giphy.com/media/jqScOnk9Dqk7ILU4kF/giphy.gif" alt="It's Not Time">
+  <% end %>
+</div>
